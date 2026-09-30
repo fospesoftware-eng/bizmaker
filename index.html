@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="lux-lock">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BizMaker — Real Assets. Strategic Capital.</title>
+<meta name="description" content="BizMaker is a Dubai-based real-assets advisory firm — strategic real estate, capital and infrastructure advisory from the UAE to global markets." />
+<link rel="icon" type="image/png" href="assets/logo-shield-gold.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css?v=88" />
+</head>
+<body>
+
+<!-- ══════════ SCROLL PROGRESS ══════════ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════ SHARED SHIELD CLIP (BizMaker crest outer shape) ══════════ -->
+<svg width="0" height="0" class="svg-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="shieldClip" clipPathUnits="objectBoundingBox">
+      <path d="M0,0 H1 V0.78 C1,0.95 0.62,1 0.5,1 C0.38,1 0,0.95 0,0.78 Z" />
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="header" id="siteHeader">
+  <div class="header__bar">
+    <a href="#top" class="brand" aria-label="BizMaker — home">
+      <span class="brand__crest"><img src="assets/logo-shield-gold.png" alt="BizMaker crest" /></span>
+      <span class="brand__text">
+        <span class="brand__word">BIZMAKER</span>
+        <span class="brand__tag">INVESTMENTS &amp; REAL ESTATE</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li class="nav__item has-mega" data-menu="expertise">
+          <button class="nav__link" type="button">EXPERTISE
+            <svg class="nav__caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          </button>
+        </li>
+        <li class="nav__item has-mega" data-menu="sectors">
+          <button class="nav__link" type="button">SECTORS
+            <svg class="nav__caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          </button>
+        </li>
+        <li class="nav__item"><a class="nav__link" href="#properties">PROPERTIES<span class="nav__arrow">↗</span></a></li>
+        <li class="nav__item"><a class="nav__link" href="#insights">INSIGHTS</a></li>
+        <li class="nav__item"><a class="nav__link" href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" type="button">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+      </button>
+      <a href="#contact" class="btn btn--gold btn--sm header__cta">
+        <span>START A CONVERSATION</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" type="button"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <!-- MEGA: EXPERTISE -->
+  <div class="mega" id="mega-expertise">
+    <div class="mega__inner">
+      <div class="mega__lead">
+        <p class="mega__eyebrow">EXPERTISE</p>
+        <h3 class="mega__title">Three perspectives.<br/><em>One strategic view.</em></h3>
+        <a href="#expertise" class="link-arrow mega__all">Explore our expertise
+          <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="mega__cols">
+        <a class="mega-col" href="#expertise">
+          <span class="mega-col__index">01</span>
+          <span class="mega-col__name">Advisory</span>
+          <span class="mega-col__desc">Real estate &amp; investment advisory. Market intelligence, feasibility, asset &amp; portfolio strategy, market entry.</span>
+          <span class="mega-col__items">Development Advisory<i></i>Investor Representation<i></i>Land &amp; Site Strategy</span>
+        </a>
+        <a class="mega-col" href="#expertise">
+          <span class="mega-col__index">02</span>
+          <span class="mega-col__name">Capital</span>
+          <span class="mega-col__desc">Connecting opportunity with capital. Investment structuring, partnerships, acquisitions &amp; dispositions.</span>
+          <span class="mega-col__items">Investment Structuring<i></i>Joint Ventures<i></i>Acquisitions &amp; Dispositions</span>
+        </a>
+        <a class="mega-col" href="#infrastructure">
+          <span class="mega-col__index">03</span>
+          <span class="mega-col__name">Infrastructure</span>
+          <span class="mega-col__desc">Data centres and strategic development — land, power, connectivity and the infrastructure of the future economy.</span>
+          <span class="mega-col__items">Data Centres<i></i>Strategic Development<i></i>Infrastructure Advisory</span>
+        </a>
+        <a class="mega-col mega-col--quiet" href="#discover">
+          <span class="mega-col__eyebrow">DISCOVER BIZMAKER</span>
+          <span class="mega-col__row">Our Story</span>
+          <span class="mega-col__row">Leadership</span>
+          <span class="mega-col__row">Connect</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEGA: SECTORS -->
+  <div class="mega" id="mega-sectors">
+    <div class="mega__inner">
+      <div class="mega__lead">
+        <p class="mega__eyebrow">SECTORS</p>
+        <h3 class="mega__title">Real assets<br/><em>across markets.</em></h3>
+        <a href="#sectors" class="link-arrow mega__all">View all sectors
+          <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="mega__cols">
+        <div class="mega-col mega-col--group">
+          <span class="mega-col__eyebrow">REAL ESTATE</span>
+          <a href="#sectors"><span class="mega-col__row">Commercial</span></a>
+          <a href="#sectors"><span class="mega-col__row">Retail</span></a>
+          <a href="#sectors"><span class="mega-col__row">Residential</span></a>
+          <a href="#sectors"><span class="mega-col__row">Industrial &amp; Logistics</span></a>
+          <a href="#land"><span class="mega-col__row">Land &amp; Development</span></a>
+        </div>
+        <div class="mega-col mega-col--group">
+          <span class="mega-col__eyebrow">SPECIALIST ASSETS</span>
+          <a href="#sectors"><span class="mega-col__row">Hospitality &amp; Hotels</span></a>
+          <a href="#sectors"><span class="mega-col__row">Healthcare</span></a>
+          <a href="#sectors"><span class="mega-col__row">Education</span></a>
+          <a href="#sectors"><span class="mega-col__row">Life Sciences</span></a>
+          <a href="#sectors"><span class="mega-col__row">Leisure &amp; Entertainment</span></a>
+        </div>
+        <div class="mega-col mega-col--feature">
+          <div class="mega-col__featureimg" data-parallax-scale><img src="assets/img-sector-land.jpg" alt="Aerial development land" loading="lazy" /></div>
+          <span class="mega-col__name">Selected Opportunities</span>
+          <span class="mega-col__desc">A curated view of real assets currently available through the BizMaker platform.</span>
+          <a href="#properties" class="link-arrow">View properties <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__inner">
+    <a href="#expertise" class="drawer__link"><span>EXPERTISE</span><em>01</em></a>
+    <a href="#sectors" class="drawer__link"><span>SECTORS</span><em>02</em></a>
+    <a href="#properties" class="drawer__link"><span>PROPERTIES</span><em>03</em></a>
+    <a href="#insights" class="drawer__link"><span>INSIGHTS</span><em>04</em></a>
+    <a href="#contact" class="drawer__link"><span>CONTACT</span><em>05</em></a>
+    <a href="#contact" class="btn btn--gold drawer__cta">START A CONVERSATION</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero premium" id="hero">
+    <div class="premium__bg" aria-hidden="true">
+      <div class="premium__glow"></div>
+      <div class="premium__grain"></div>
+    </div>
+
+    <!-- LEFT — editorial panel -->
+    <div class="premium__panel">
+      <span class="premium__side" aria-hidden="true">BIZMAKER&nbsp;&nbsp;·&nbsp;&nbsp;EST. DUBAI&nbsp;&nbsp;·&nbsp;&nbsp;GLOBAL CAPITAL</span>
+
+      <div class="premium__content">
+        <span class="premium__eyebrow"><i class="premium__eyebrow-rule"></i>INVESTMENTS &amp; REAL ESTATE<span class="premium__eyebrow-dot"></span></span>
+        <h1 class="premium__title">
+          <span class="premium__line">Real Assets<span class="gold">.</span></span>
+          <span class="premium__line"><em>Strategic</em> Capital<span class="gold">.</span></span>
+        </h1>
+        <p class="premium__sub">
+          Strategic real estate and infrastructure advisory — engineered for capital partners, from Dubai to global markets.
+        </p>
+        <div class="premium__cta">
+          <a href="#expertise" class="btn btn--gold">
+            <span>EXPLORE OUR EXPERTISE</span>
+            <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#markets" class="btn btn--outline">
+            <span>LIVE MARKET</span>
+            <span class="btn__arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- floating monument — globe & Dubai skyline (background removed, integrated with text) -->
+    <div class="premium__monument" aria-hidden="true">
+      <div class="premium__monument-stage">
+        <div class="premium__monument-halo"></div>
+        <div class="premium__ring premium__ring--a"></div>
+        <div class="premium__ring premium__ring--b"></div>
+        <div class="premium__monument-figure">
+          <img src="assets/hero-globe-cutout.png?v=79" alt="BizMaker golden Dubai skyline monument resting on a marble globe" />
+          <div class="premium__monument-shine"></div>
+        </div>
+        <div class="premium__monument-shadow"></div>
+      </div>
+      <span class="premium__monument-index">FIG.&nbsp;01</span>
+      <div class="premium__dust"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+
+    <a class="premium__scroll" href="#positioning" aria-label="Scroll to next section">
+      <span class="premium__scroll-text">SCROLL</span>
+      <span class="premium__scroll-line"><i></i></span>
+    </a>
+  </section>
+
+  <!-- ══════════ 01 POSITIONING ══════════ -->
+  <section class="section positioning" id="positioning">
+    <div class="container">
+      <p class="section-index" data-reveal><em>01</em> — POSITIONING</p>
+      <h2 class="statement" data-reveal-lines>
+        <span class="line"><span class="line__inner">Real assets are changing.</span></span>
+        <span class="line"><span class="line__inner">The way we evaluate them <em>should&nbsp;too.</em></span></span>
+      </h2>
+
+      <div class="positioning__grid">
+        <div class="positioning__lead">
+          <h3 class="h3-serif" data-reveal>Beyond property.<br/><em>Into opportunity.</em></h3>
+        </div>
+        <div class="positioning__copy">
+          <p data-reveal>Real estate is increasingly shaped by capital, technology, infrastructure and changing market dynamics. BizMaker brings these perspectives together to help investors, owners and development partners understand opportunities, evaluate complexity and make informed real-asset decisions.</p>
+        </div>
+      </div>
+
+      <div class="pillars" id="pillars">
+        <div class="pillar pillar--emerald" data-tilt data-reveal>
+          <div class="pillar__num">01</div>
+          <h4>REAL<br/>ESTATE</h4>
+          <p>Assets, markets and the fundamentals that drive long-term value.</p>
+          <div class="pillar__sheen"></div>
+        </div>
+        <div class="pillar__connector" aria-hidden="true">
+          <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 30 C 60 30, 80 30, 200 30" /></svg>
+          <span class="pillar__jewel">◆</span>
+        </div>
+        <div class="pillar pillar--bronze" data-tilt data-reveal>
+          <div class="pillar__num">02</div>
+          <h4>CAPITAL</h4>
+          <p>Structures, partnerships and the investment logic behind every decision.</p>
+          <div class="pillar__sheen"></div>
+        </div>
+        <div class="pillar__connector" aria-hidden="true">
+          <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 30 C 60 30, 80 30, 200 30" /></svg>
+          <span class="pillar__jewel">◆</span>
+        </div>
+        <div class="pillar pillar--teal" data-tilt data-reveal>
+          <div class="pillar__num">03</div>
+          <h4>INFRA-<br/>STRUCTURE</h4>
+          <p>Land, power and connectivity — the systems of the future economy.</p>
+          <div class="pillar__sheen"></div>
+        </div>
+
+        <div class="pillars__converge" aria-hidden="true">
+          <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+            <path class="converge converge--l" d="M220 0 C 300 120, 480 180, 600 190" />
+            <path class="converge converge--r" d="M980 0 C 900 120, 720 180, 600 190" />
+          </svg>
+        </div>
+      </div>
+      <div class="pillars__value" data-reveal>
+        <span class="pillars__diamond"><img src="assets/logo-shield-gold.png" alt="" /></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 02 EXPERTISE ══════════ -->
+  <section class="section expertise" id="expertise">
+    <div class="expertise__watermark" data-parallax-slow>EXPERTISE</div>
+    <div class="container">
+      <header class="section-head">
+        <div>
+          <p class="section-index" data-reveal><em>02</em> — EXPERTISE</p>
+          <h2 class="section-title" data-reveal-lines>
+            <span class="line"><span class="line__inner">Three perspectives.</span></span>
+            <span class="line"><span class="line__inner"><em>One strategic view.</em></span></span>
+          </h2>
+        </div>
+        <p class="section-intro" data-reveal>An integrated advisory practice built around the way real-asset decisions are actually made — intelligence, capital and delivery considered together.</p>
+      </header>
+
+      <div class="panels">
+        <article class="panel" data-tilt data-reveal>
+          <svg class="panel__outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1,1 H99 V78 C99,95 62,99 50,99 C38,99 1,95 1,78 Z" vector-effect="non-scaling-stroke" /></svg>
+          <div class="panel__media">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?image_size=landscape_4_3&prompt=minimalist%20luxury%20equestrian%20emblem%2C%20single%20continuous%20gold%20line%20art%20of%20a%20horse%20rearing%20up%20with%20flowing%20mane%2C%20metallic%20champagne%20gold%20linework%2C%20deep%20emerald%20green%20background%2C%20faint%20art%20deco%20geometric%20contour%20pattern%2C%20centered%20heraldic%20composition%2C%20flat%20vector%20illustration%2C%20elegant%20minimal%2C%20no%20photography%2C%20no%20text" alt="Gold line-art rearing horse emblem on emerald patterned field" loading="lazy" />
+            <span class="panel__index">01</span>
+          </div>
+          <div class="panel__body">
+            <h3 class="panel__title">Advisory</h3>
+            <p class="panel__standfirst">Understand the opportunity.</p>
+            <p class="panel__desc">Market intelligence, strategy, feasibility, development and asset perspectives — disciplined analysis from first principles to decision.</p>
+            <a href="#contact" class="link-arrow">Explore advisory
+              <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="panel" data-tilt data-reveal>
+          <svg class="panel__outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1,1 H99 V78 C99,95 62,99 50,99 C38,99 1,95 1,78 Z" vector-effect="non-scaling-stroke" /></svg>
+          <div class="panel__media">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?image_size=landscape_4_3&prompt=minimalist%20luxury%20equestrian%20emblem%2C%20single%20continuous%20gold%20line%20art%20of%20a%20horse%20galloping%20at%20full%20speed%20with%20flowing%20mane%20and%20tail%2C%20metallic%20champagne%20gold%20linework%2C%20deep%20emerald%20green%20background%2C%20faint%20art%20deco%20geometric%20contour%20pattern%2C%20centered%20heraldic%20composition%2C%20flat%20vector%20illustration%2C%20elegant%20minimal%2C%20no%20photography%2C%20no%20text" alt="Gold line-art galloping horse emblem on emerald patterned field" loading="lazy" />
+            <span class="panel__index">02</span>
+          </div>
+          <div class="panel__body">
+            <h3 class="panel__title">Capital</h3>
+            <p class="panel__standfirst">Connect opportunity with capital.</p>
+            <p class="panel__desc">Investment advisory, structuring and partnerships — acquisitions, dispositions and capital strategy aligned to each mandate.</p>
+            <a href="#contact" class="link-arrow">Explore capital
+              <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="panel" data-tilt data-reveal>
+          <svg class="panel__outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1,1 H99 V78 C99,95 62,99 50,99 C38,99 1,95 1,78 Z" vector-effect="non-scaling-stroke" /></svg>
+          <div class="panel__media">
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?image_size=landscape_4_3&prompt=minimalist%20luxury%20equestrian%20emblem%2C%20single%20continuous%20gold%20line%20art%20of%20a%20horse%20leaping%20in%20a%20show%20jumping%20pose%20with%20flowing%20mane%2C%20metallic%20champagne%20gold%20linework%2C%20deep%20emerald%20green%20background%2C%20faint%20art%20deco%20geometric%20contour%20pattern%2C%20centered%20heraldic%20composition%2C%20flat%20vector%20illustration%2C%20elegant%20minimal%2C%20no%20photography%2C%20no%20text" alt="Gold line-art jumping horse emblem on emerald patterned field" loading="lazy" />
+            <span class="panel__index">03</span>
+          </div>
+          <div class="panel__body">
+            <h3 class="panel__title">Infrastructure</h3>
+            <p class="panel__standfirst">Build around the future economy.</p>
+            <p class="panel__desc">Data centres, digital infrastructure, land, power, connectivity and strategic development — a new category of real assets.</p>
+            <a href="#infrastructure" class="link-arrow">Explore infrastructure
+              <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ LIVE MARKET (moved hero) ══════════ -->
+  <section class="hero hero--markets" id="markets">
+    <!-- ATMOSPHERE LAYERS -->
+    <div class="hero__bg" data-parallax-bg>
+      <img src="assets/img-hero.jpg" alt="" class="hero__img" />
+      <div class="hero__marble" aria-hidden="true"></div>
+      <div class="hero__aurora hero__aurora--a" aria-hidden="true"></div>
+      <div class="hero__aurora hero__aurora--b" aria-hidden="true"></div>
+      <div class="hero__beam" aria-hidden="true"></div>
+      <div class="hero__atmogrid" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__grain" aria-hidden="true"></div>
+    </div>
+
+    <!-- particle scene -->
+    <div class="hero__scene" id="heroScene" aria-hidden="true">
+      <canvas class="hero__particles" id="heroParticles"></canvas>
+    </div>
+
+    <div class="hero__grid">
+      <!-- LEFT COLUMN — headline + CTA -->
+      <div class="hero__col hero__col--left">
+        <p class="section-index hero--markets__index" data-reveal><em>LIVE</em> — MARKET INTELLIGENCE</p>
+        <h2 class="hero__title hero--markets__title">
+          <span class="line"><span class="line__inner hero__line1">PLOTAE<span class="period">.</span></span></span>
+          <span class="line"><span class="line__inner hero__line2">LIVE&nbsp;TRACKER<span class="period">.</span></span></span>
+        </h2>
+        <div class="hero__rule" data-reveal></div>
+        <p class="hero__sub" data-reveal>
+          Tap the crest to reveal Dubai's top 10 land areas — live average prices and trend direction, updated in real time.
+        </p>
+        <div class="hero__cta" data-reveal>
+          <a href="https://plotae.com" target="_blank" rel="noopener" class="btn btn--gold">
+            <span>PlotAE.com</span>
+            <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN — CSS 3D TILTED EMERALD STAGE with floating horse crest -->
+      <div class="hero__col hero__col--right">
+        <div class="hero__stage3d" id="heroStage3d" data-tilt>
+
+          <!-- tilted emerald surface → depth base -->
+          <div class="stage3d__surface"></div>
+          <div class="stage3d__floor"></div>
+
+          <!-- AMBIENT: halo + orbiting gold specs -->
+          <div class="stage3d__halo"></div>
+          <span class="stage3d__orb stage3d__orb--1"></span>
+          <span class="stage3d__orb stage3d__orb--2"></span>
+          <span class="stage3d__orb stage3d__orb--3"></span>
+
+          <!-- MEDALLION: horse shield with gold conic ring, center stage — CLICK TO OPEN LIVE DUBAI TOP 10 -->
+          <button type="button" class="medallion" id="medallionBtn"
+                  aria-haspopup="dialog" aria-controls="marketDeck" aria-expanded="false"
+                  aria-label="Open live Dubai top 10 inventory — prices and areas">
+            <!-- gold conic-gradient ring (spinning thin band) -->
+            <span class="medallion__ring" aria-hidden="true"></span>
+            <!-- the shield itself -->
+            <img class="medallion__crest" src="assets/logo-shield-gold.png" alt="" draggable="false" />
+            <!-- inner glow -->
+            <span class="medallion__glow" aria-hidden="true"></span>
+            <!-- ultra ping rings -->
+            <span class="medallion__ping" aria-hidden="true"></span>
+            <span class="medallion__ping medallion__ping--2" aria-hidden="true"></span>
+          </button>
+
+          <!-- ═══ LIVE DUBAI TOP 10 — rendered INSIDE the same stage box ═══ -->
+          <div class="market" id="marketDeck" aria-hidden="true">
+            <div class="market__head">
+              <span class="market__live"><i></i>LIVE</span>
+              <div class="market__head-txt">
+                <h3>DUBAI — TOP 10 LAND</h3>
+                <p>Avg price &amp; trend</p>
+              </div>
+              <button type="button" class="market__close" id="marketClose" aria-label="Close live inventory">
+                <svg viewBox="0 0 16 16"><path d="M3 3l10 10M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+            <div class="market__viewport" id="marketViewport">
+              <div class="market__track" id="marketTrack"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom trust strip -->
+    <div class="hero__trust" aria-hidden="true">
+      <span class="hero__trust-line"></span>
+      <span class="hero__trust-text">DUBAI &nbsp;·&nbsp; DOHA &nbsp;·&nbsp; LONDON &nbsp;·&nbsp; SINGAPORE &nbsp;·&nbsp; RIYADH &nbsp;·&nbsp; HONG&nbsp;KONG</span>
+      <span class="hero__trust-line"></span>
+    </div>
+
+    <div class="hero__coords" aria-hidden="true">
+      <span class="hero__coords-dot"></span>
+      <span>25.2048° N &nbsp;/&nbsp; 55.2708° E &nbsp;—&nbsp; DUBAI, UAE</span>
+    </div>
+  </section>
+
+  <!-- ══════════ 03 SECTORS ══════════ -->
+  <section class="section sectors" id="sectors">
+    <div class="container">
+      <header class="section-head">
+        <div>
+          <p class="section-index" data-reveal><em>03</em> — SECTORS</p>
+          <h2 class="section-title" data-reveal-lines>
+            <span class="line"><span class="line__inner">Real assets</span></span>
+            <span class="line"><span class="line__inner"><em>across markets.</em></span></span>
+          </h2>
+        </div>
+        <p class="section-intro" data-reveal>From commercial and industrial real estate to hospitality, land and specialist assets — a strategic perspective applied across the spectrum of real assets.</p>
+      </header>
+
+      <div class="tiles">
+        <a class="tile tile--lg" href="#properties" data-tilt data-reveal>
+          <div class="tile__media"><span class="tile__pattern" aria-hidden="true"></span><img src="assets/img-sector-commercial.jpg" alt="BizMaker commercial presence — architectural signage at dusk" loading="lazy" data-parallax-tile /></div>
+          <div class="tile__overlay"></div>
+          <div class="tile__content">
+            <span class="tile__index">A — 01</span>
+            <h3>Commercial</h3>
+            <span class="tile__cta">Explore sector <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+        <a class="tile" href="#properties" data-tilt data-reveal>
+          <div class="tile__media"><span class="tile__pattern" aria-hidden="true"></span><img src="assets/img-sector-logistics.jpg" alt="Industrial and logistics" loading="lazy" data-parallax-tile /></div>
+          <div class="tile__overlay"></div>
+          <div class="tile__content">
+            <span class="tile__index">A — 02</span>
+            <h3>Industrial <em>&amp;</em> Logistics</h3>
+            <span class="tile__cta">Explore sector <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+        <a class="tile" href="#land" data-tilt data-reveal>
+          <div class="tile__media"><span class="tile__pattern" aria-hidden="true"></span><img src="assets/img-sector-land.jpg" alt="Land and development" loading="lazy" data-parallax-tile /></div>
+          <div class="tile__overlay"></div>
+          <div class="tile__content">
+            <span class="tile__index">A — 03</span>
+            <h3>Land <em>&amp;</em> Development</h3>
+            <span class="tile__cta">Explore sector <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+        <a class="tile tile--lg" href="#properties" data-tilt data-reveal>
+          <div class="tile__media"><span class="tile__pattern" aria-hidden="true"></span><img src="assets/img-sector-hospitality.jpg" alt="Luxury hospitality interior in deep green and champagne gold" loading="lazy" data-parallax-tile /></div>
+          <div class="tile__overlay"></div>
+          <div class="tile__content">
+            <span class="tile__index">B — 01</span>
+            <h3>Hospitality <em>&amp;</em> Hotels</h3>
+            <span class="tile__cta">Explore sector <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+      </div>
+
+      <div class="sectorlinks" data-reveal>
+        <span class="sectorlinks__label">FURTHER SECTORS</span>
+        <a href="#sectors">Retail</a><i>·</i>
+        <a href="#sectors">Residential</a><i>·</i>
+        <a href="#sectors">Healthcare</a><i>·</i>
+        <a href="#sectors">Education</a><i>·</i>
+        <a href="#sectors">Life Sciences</a><i>·</i>
+        <a href="#sectors">Leisure &amp; Entertainment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 04 LAND ══════════ -->
+  <section class="section land" id="land">
+    <div class="land__bg" data-parallax-bg><img src="assets/img-land-planning.jpg" alt="Aerial of new city expansion" loading="lazy" /></div>
+    <div class="land__veil"></div>
+    <div class="container">
+      <p class="section-index section-index--light" data-reveal><em>04</em> — LAND &amp; DEVELOPMENT</p>
+      <h2 class="section-title section-title--light land__title" data-reveal-lines>
+        <span class="line"><span class="line__inner">Where opportunity</span></span>
+        <span class="line"><span class="line__inner"><em>begins.</em></span></span>
+      </h2>
+      <p class="land__copy" data-reveal>Land is more than a parcel. It is location, planning, infrastructure, capital — and the future value created when all five are understood as one.</p>
+
+      <div class="chain" id="chain">
+        <div class="chain__line" aria-hidden="true"><svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path id="chainPath" d="M40 60 L1160 60" /></svg></div>
+        <div class="chain__node" data-reveal><span class="chain__step">01</span><span class="chain__name">LAND</span></div>
+        <div class="chain__node" data-reveal><span class="chain__step">02</span><span class="chain__name">LOCATION</span></div>
+        <div class="chain__node" data-reveal><span class="chain__step">03</span><span class="chain__name">PLANNING</span></div>
+        <div class="chain__node" data-reveal><span class="chain__step">04</span><span class="chain__name">INFRASTRUCTURE</span></div>
+        <div class="chain__node" data-reveal><span class="chain__step">05</span><span class="chain__name">CAPITAL</span></div>
+        <div class="chain__node" data-reveal><span class="chain__step">06</span><span class="chain__name">DEVELOPMENT</span></div>
+        <div class="chain__node chain__node--value" data-reveal><span class="chain__jewel"><img src="assets/logo-shield-gold.png" alt="" /></span><span class="chain__name">VALUE</span></div>
+      </div>
+
+      <a href="#contact" class="link-arrow link-arrow--light land__cta" data-reveal>Explore land &amp; development opportunities
+        <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════ 05 INFRASTRUCTURE ══════════ -->
+  <section class="section infrastructure" id="infrastructure">
+    <div class="container infra__container">
+      <div class="infra__text">
+        <p class="section-index" data-reveal><em>05</em> — STRATEGIC INFRASTRUCTURE</p>
+        <h2 class="section-title" data-reveal-lines>
+          <span class="line"><span class="line__inner">The infrastructure</span></span>
+          <span class="line"><span class="line__inner">behind the <em>digital economy.</em></span></span>
+        </h2>
+        <p class="section-intro" data-reveal>Data centres and digital infrastructure are creating a new category of real-asset opportunities — where land, power, connectivity, technology and capital converge.</p>
+        <a href="#contact" class="link-arrow" data-reveal>Explore infrastructure
+          <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="orbit" id="orbit" data-reveal>
+        <div class="orbit__scene" id="orbitScene">
+          <div class="orbit__rings" aria-hidden="true">
+            <span class="orbit__ring orbit__ring--1"></span>
+            <span class="orbit__ring orbit__ring--2"></span>
+            <span class="orbit__ring orbit__ring--3"></span>
+          </div>
+          <div class="orbit__spokes" aria-hidden="true"></div>
+          <div class="orbit__center">
+            <img src="assets/logo-shield-gold.png" alt="" />
+            <span>DATA<br/>CENTRE</span>
+          </div>
+          <div class="orbit__nodes" id="orbitNodes">
+            <span class="orbit-node" data-angle="0"><i>01</i>LAND</span>
+            <span class="orbit-node" data-angle="60"><i>02</i>POWER</span>
+            <span class="orbit-node" data-angle="120"><i>03</i>CONNECTIVITY</span>
+            <span class="orbit-node" data-angle="180"><i>04</i>CAPITAL</span>
+            <span class="orbit-node" data-angle="240"><i>05</i>DEVELOPMENT</span>
+            <span class="orbit-node" data-angle="300"><i>06</i>MARKET</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 06 OPPORTUNITIES ══════════ -->
+  <section class="section opportunities" id="properties">
+    <div class="container">
+      <header class="section-head section-head--rail">
+        <div>
+          <p class="section-index" data-reveal><em>06</em> — SELECTED OPPORTUNITIES</p>
+          <h2 class="section-title" data-reveal-lines>
+            <span class="line"><span class="line__inner">Selected</span></span>
+            <span class="line"><span class="line__inner"><em>opportunities.</em></span></span>
+          </h2>
+        </div>
+        <div>
+          <p class="section-intro" data-reveal>A curated view of real assets currently available through the BizMaker platform — inventory in service of strategy.</p>
+          <a href="#properties" class="link-arrow rail__topcta" data-reveal>View all properties <span>↗</span></a>
+        </div>
+      </header>
+    </div>
+
+    <div class="railwrap" data-reveal>
+      <div class="rail" id="rail">
+        <article class="card" data-tilt>
+          <div class="card__media"><img src="assets/img-sector-land.jpg" alt="Development land, Dubai South" loading="lazy" data-parallax-tile /></div>
+          <div class="card__body">
+            <span class="card__type">DEVELOPMENT LAND</span>
+            <h3 class="card__title">Dubai South District Parcel</h3>
+            <p class="card__desc">Master-planned land adjacent to aviation and logistics corridors, with a joint venture mandate.</p>
+            <div class="card__foot">
+              <span class="card__loc"><svg viewBox="0 0 16 16"><path d="M8 1.5a5 5 0 0 0-5 5c0 3.4 5 8 5 8s5-4.6 5-8a5 5 0 0 0-5-5z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6.5" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/></svg> Dubai South</span>
+              <span class="card__tag">JOINT VENTURE</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tilt>
+          <div class="card__media"><img src="assets/img-sector-commercial.jpg" alt="Commercial tower" loading="lazy" data-parallax-tile /></div>
+          <div class="card__body">
+            <span class="card__type">GRADE-A COMMERCIAL</span>
+            <h3 class="card__title">Central Business District Tower</h3>
+            <p class="card__desc">Institutional income-producing asset with diversified tenancy and long weighted lease profile.</p>
+            <div class="card__foot">
+              <span class="card__loc"><svg viewBox="0 0 16 16"><path d="M8 1.5a5 5 0 0 0-5 5c0 3.4 5 8 5 8s5-4.6 5-8a5 5 0 0 0-5-5z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6.5" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/></svg> Dubai, CBD</span>
+              <span class="card__tag">INCOME ASSET</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tilt>
+          <div class="card__media"><img src="assets/img-infrastructure.jpg" alt="Data centre campus" loading="lazy" data-parallax-tile /></div>
+          <div class="card__body">
+            <span class="card__type">DATA CENTRE CAMPUS</span>
+            <h3 class="card__title">Emirates Digital Corridor</h3>
+            <p class="card__desc">Shovel-ready strategic infrastructure site with secured power allocation and fibre connectivity.</p>
+            <div class="card__foot">
+              <span class="card__loc"><svg viewBox="0 0 16 16"><path d="M8 1.5a5 5 0 0 0-5 5c0 3.4 5 8 5 8s5-4.6 5-8a5 5 0 0 0-5-5z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6.5" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/></svg> Abu Dhabi–Dubai</span>
+              <span class="card__tag">STRATEGIC ASSET</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tilt>
+          <div class="card__media"><img src="assets/img-sector-logistics.jpg" alt="Logistics estate" loading="lazy" data-parallax-tile /></div>
+          <div class="card__body">
+            <span class="card__type">LOGISTICS &amp; INDUSTRIAL</span>
+            <h3 class="card__title">Free-Zone Logistics Estate</h3>
+            <p class="card__desc">Multi-asset warehousing and last-mile portfolio available as a single platform acquisition.</p>
+            <div class="card__foot">
+              <span class="card__loc"><svg viewBox="0 0 16 16"><path d="M8 1.5a5 5 0 0 0-5 5c0 3.4 5 8 5 8s5-4.6 5-8a5 5 0 0 0-5-5z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6.5" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/></svg> Jebel Ali Free Zone</span>
+              <span class="card__tag">PORTFOLIO</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tilt>
+          <div class="card__media"><img src="assets/img-sector-hospitality.jpg" alt="Hospitality asset" loading="lazy" data-parallax-tile /></div>
+          <div class="card__body">
+            <span class="card__type">HOSPITALITY &amp; HOTELS</span>
+            <h3 class="card__title">Coastal Resort Asset</h3>
+            <p class="card__desc">Operating beachfront hotel with significant repositioning and value-add upside.</p>
+            <div class="card__foot">
+              <span class="card__loc"><svg viewBox="0 0 16 16"><path d="M8 1.5a5 5 0 0 0-5 5c0 3.4 5 8 5 8s5-4.6 5-8a5 5 0 0 0-5-5z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6.5" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/></svg> Ras Al Khaimah</span>
+              <span class="card__tag">REPOSITIONING</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tilt>
+          <div class="card__media"><img src="assets/img-capital.jpg" alt="Champagne bronze texture — mixed-use real assets" loading="lazy" data-parallax-tile /></div>
+          <div class="card__body">
+            <span class="card__type">SPECIALIST ASSET</span>
+            <h3 class="card__title">Healthcare &amp; Life Sciences Facility</h3>
+            <p class="card__desc">Purpose-built clinical real estate with long-dated covenant income and expansion capacity.</p>
+            <div class="card__foot">
+              <span class="card__loc"><svg viewBox="0 0 16 16"><path d="M8 1.5a5 5 0 0 0-5 5c0 3.4 5 8 5 8s5-4.6 5-8a5 5 0 0 0-5-5z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6.5" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/></svg> Dubai Hills District</span>
+              <span class="card__tag">SALE &amp; LEASEBACK</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="rail__hint" id="railHint">
+        <svg viewBox="0 0 40 16"><path d="M2 8h34M28 2l8 6-8 6" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        DRAG TO EXPLORE
+      </div>
+    </div>
+    <div class="container">
+      <div class="rail__progress"><span id="railProgress"></span></div>
+      <a href="#properties" class="btn btn--outline">VIEW ALL PROPERTIES <span class="btn__arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ══════════ 07 NETWORK ══════════ -->
+  <section class="section network" id="global">
+    <div class="network__veil"></div>
+    <div class="container network__container">
+      <div class="network__text">
+        <p class="section-index section-index--light" data-reveal><em>07</em> — UAE · GLOBAL POSITIONING</p>
+        <h2 class="section-title section-title--light" data-reveal-lines>
+          <span class="line"><span class="line__inner">Dubai.</span></span>
+          <span class="line"><span class="line__inner">Connected to <em>the world.</em></span></span>
+        </h2>
+        <p class="network__copy" data-reveal>From its Dubai base, BizMaker operates at the intersection of the UAE, MENA and global investment markets — local understanding, united with an international perspective on capital, real assets and strategic partnerships.</p>
+        <div class="network__tiers" data-reveal>
+          <div class="tier tier--uae" data-region="uae">
+            <span class="tier__medal"><span class="tier__num">01</span></span>
+            <span class="tier__text"><strong>UAE</strong><em>Dubai · Abu Dhabi</em></span>
+            <svg class="tier__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="tier tier--mena" data-region="mena">
+            <span class="tier__medal"><span class="tier__num">02</span></span>
+            <span class="tier__text"><strong>MENA</strong><em>Riyadh · Doha · Cairo · Muscat</em></span>
+            <svg class="tier__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="tier tier--global" data-region="global">
+            <span class="tier__medal"><span class="tier__num">03</span></span>
+            <span class="tier__text"><strong>GLOBAL</strong><em>London · New York · Singapore · Mumbai</em></span>
+            <svg class="tier__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="network__map" id="networkMap">
+        <svg viewBox="0 0 620 560" class="net-svg" aria-hidden="true">
+          <defs>
+            <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#e8cfa0" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#c49a6c" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="arcGold" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stop-color="#f3e3bd" stop-opacity=".75"/>
+              <stop offset="45%" stop-color="#d8b898" stop-opacity=".5"/>
+              <stop offset="100%" stop-color="#8c6637" stop-opacity=".18"/>
+            </linearGradient>
+            <radialGradient id="pulseGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#fff7e2" stop-opacity="1"/>
+              <stop offset="45%" stop-color="#e8cfa0" stop-opacity=".55"/>
+              <stop offset="100%" stop-color="#e8cfa0" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <g class="net-dots" id="netDots"></g>
+          <g class="net-arcs" id="netArcs">
+            <path class="arc arc--mena" id="arcRiyadh" d="M330 300 C 250 180, 210 120, 170 90"/>
+            <path class="arc arc--mena" id="arcDoha" d="M330 300 C 280 170, 250 150, 250 120"/>
+            <path class="arc arc--mena" id="arcCairo" d="M330 300 C 250 230, 180 200, 130 190"/>
+            <path class="arc arc--mena" id="arcMuscat" d="M330 300 C 360 200, 380 150, 400 110"/>
+            <path class="arc arc--global" id="arcLondon" d="M330 300 C 260 250, 180 250, 90 240"/>
+            <path class="arc arc--global" id="arcSingapore" d="M330 300 C 300 200, 360 120, 520 70"/>
+            <path class="arc arc--global" id="arcHongkong" d="M330 300 C 430 250, 520 260, 560 250"/>
+            <path class="arc arc--global" id="arcMumbai" d="M330 300 C 400 330, 470 350, 520 380"/>
+            <path class="arc arc--uae" id="arcAbudhabi" d="M330 300 C 310 330, 295 350, 280 370"/>
+          </g>
+          <g class="net-pulses">
+            <circle class="route-pulse" r="5" fill="url(#pulseGlow)"><animateMotion dur="4.2s" repeatCount="indefinite" begin="0.4s" rotate="auto"><mpath href="#arcRiyadh"/></animateMotion></circle>
+            <circle class="route-pulse" r="5" fill="url(#pulseGlow)"><animateMotion dur="4.8s" repeatCount="indefinite" begin="1.6s"><mpath href="#arcDoha"/></animateMotion></circle>
+            <circle class="route-pulse" r="5" fill="url(#pulseGlow)"><animateMotion dur="5.4s" repeatCount="indefinite" begin="2.4s"><mpath href="#arcCairo"/></animateMotion></circle>
+            <circle class="route-pulse" r="5" fill="url(#pulseGlow)"><animateMotion dur="4.6s" repeatCount="indefinite" begin="3s"><mpath href="#arcMuscat"/></animateMotion></circle>
+            <circle class="route-pulse" r="5" fill="url(#pulseGlow)"><animateMotion dur="6s" repeatCount="indefinite" begin="0.8s"><mpath href="#arcLondon"/></animateMotion></circle>
+            <circle class="route-pulse" r="5" fill="url(#pulseGlow)"><animateMotion dur="6.4s" repeatCount="indefinite" begin="2.2s"><mpath href="#arcSingapore"/></animateMotion></circle>
+            <circle class="route-pulse" r="5" fill="url(#pulseGlow)"><animateMotion dur="5.8s" repeatCount="indefinite" begin="3.4s"><mpath href="#arcHongkong"/></animateMotion></circle>
+            <circle class="route-pulse" r="5" fill="url(#pulseGlow)"><animateMotion dur="5.2s" repeatCount="indefinite" begin="1.2s"><mpath href="#arcMumbai"/></animateMotion></circle>
+            <circle class="route-pulse" r="4.4" fill="url(#pulseGlow)"><animateMotion dur="3.4s" repeatCount="indefinite" begin="0.2s"><mpath href="#arcAbudhabi"/></animateMotion></circle>
+          </g>
+          <g class="net-nodes" id="netNodes">
+            <g class="node node--mena" transform="translate(170,90)"><circle r="14" fill="url(#nodeGlow)"/><circle r="3.4" class="node__core"/></g>
+            <g class="node node--mena" transform="translate(250,120)"><circle r="14" fill="url(#nodeGlow)"/><circle r="3.4" class="node__core"/></g>
+            <g class="node node--mena" transform="translate(130,190)"><circle r="14" fill="url(#nodeGlow)"/><circle r="3.4" class="node__core"/></g>
+            <g class="node node--mena" transform="translate(400,110)"><circle r="14" fill="url(#nodeGlow)"/><circle r="3.4" class="node__core"/></g>
+            <g class="node node--global" transform="translate(90,240)"><circle r="14" fill="url(#nodeGlow)"/><circle r="3.4" class="node__core"/></g>
+            <g class="node node--global" transform="translate(520,70)"><circle r="14" fill="url(#nodeGlow)"/><circle r="3.4" class="node__core"/></g>
+            <g class="node node--global" transform="translate(560,250)"><circle r="14" fill="url(#nodeGlow)"/><circle r="3.4" class="node__core"/></g>
+            <g class="node node--global" transform="translate(520,380)"><circle r="14" fill="url(#nodeGlow)"/><circle r="3.4" class="node__core"/></g>
+            <g class="node node--uae" transform="translate(280,370)"><circle r="12" fill="url(#nodeGlow)"/><circle r="3" class="node__core"/></g>
+            <g class="node node--hq" transform="translate(330,300)">
+              <circle r="46" fill="url(#nodeGlow)"/>
+              <circle r="36" class="node__orbit"/>
+              <circle r="26" class="node__halo"/>
+              <circle r="6" class="node__core"/>
+            </g>
+          </g>
+          <g class="net-labels" font-family="Jost, sans-serif">
+            <text x="170" y="72" class="net-label net-label--mena">RIYADH</text>
+            <text x="250" y="102" class="net-label net-label--mena">DOHA</text>
+            <text x="120" y="214" class="net-label net-label--mena">CAIRO</text>
+            <text x="400" y="92" class="net-label net-label--mena">MUSCAT</text>
+            <text x="84" y="264" class="net-label net-label--global">LONDON</text>
+            <text x="520" y="52" class="net-label net-label--global">SINGAPORE</text>
+            <text x="556" y="274" class="net-label net-label--global">HONG KONG</text>
+            <text x="470" y="408" class="net-label net-label--global">MUMBAI</text>
+            <text x="246" y="394" class="net-label net-label--uae">ABU DHABI</text>
+            <text x="344" y="306" class="net-label net-label--hq">DUBAI · HQ</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 08 INSIGHTS ══════════ -->
+  <section class="section insights" id="insights">
+    <div class="container">
+      <header class="section-head">
+        <div>
+          <p class="section-index" data-reveal><em>08</em> — PERSPECTIVES</p>
+          <h2 class="section-title" data-reveal-lines>
+            <span class="line"><span class="line__inner">Perspective</span></span>
+            <span class="line"><span class="line__inner"><em>matters.</em></span></span>
+          </h2>
+        </div>
+        <p class="section-intro" data-reveal>Research, market intelligence and perspectives on real assets, capital and the infrastructure shaping tomorrow's markets.</p>
+      </header>
+
+      <div class="insights__grid">
+        <article class="insight" data-tilt data-reveal>
+          <a href="#insights" class="insight__media"><img src="assets/img-insight-market.jpg" alt="Bronze gold editorial texture — market intelligence" loading="lazy" data-parallax-tile /></a>
+          <div class="insight__body">
+            <div class="insight__meta"><span class="insight__cat">MARKET INTELLIGENCE</span><time>AUTUMN 2025</time></div>
+            <h3 class="insight__title"><a href="#insights">Where capital is moving in the UAE real-asset market.</a></h3>
+            <a href="#insights" class="link-arrow">Read perspective
+              <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="insight" data-tilt data-reveal>
+          <a href="#insights" class="insight__media"><img src="assets/img-insight-assets.jpg" alt="Emerald marble study — real assets and investment" loading="lazy" data-parallax-tile /></a>
+          <div class="insight__body">
+            <div class="insight__meta"><span class="insight__cat">REAL ASSETS</span><time>SEPTEMBER 2025</time></div>
+            <h3 class="insight__title"><a href="#insights">The institutional case for logistics &amp; industrial assets.</a></h3>
+            <a href="#insights" class="link-arrow">Read perspective
+              <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="insight" data-tilt data-reveal>
+          <a href="#insights" class="insight__media"><img src="assets/img-insight-infra.jpg" alt="Deep emerald marble — digital infrastructure perspective" loading="lazy" data-parallax-tile /></a>
+          <div class="insight__body">
+            <div class="insight__meta"><span class="insight__cat">INFRASTRUCTURE</span><time>SEPTEMBER 2025</time></div>
+            <h3 class="insight__title"><a href="#insights">Data centres: a new asset class for regional capital.</a></h3>
+            <a href="#insights" class="link-arrow">Read perspective
+              <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 09 DISCOVER ══════════ -->
+  <section class="section discover" id="discover">
+    <div class="container">
+      <div class="discover__top">
+        <p class="section-index" data-reveal><em>09</em> — DISCOVER BIZMAKER</p>
+        <h2 class="section-title" data-reveal-lines>
+          <span class="line"><span class="line__inner">Built around</span></span>
+          <span class="line"><span class="line__inner"><em>opportunity.</em></span></span>
+        </h2>
+        <p class="discover__copy" data-reveal>BizMaker was founded on a simple conviction — that the most interesting opportunities live at the intersection of real estate, capital and infrastructure. Today we advise investors, owners and development partners across the UAE, MENA and beyond.</p>
+      </div>
+
+      <div class="discover__cards">
+        <a class="dcard" href="#contact" data-tilt data-reveal>
+          <span class="dcard__num"><em>01</em></span>
+          <h3>Our Story</h3>
+          <p>How BizMaker evolved — and the principles that shape how we work.</p>
+          <span class="link-arrow">Discover <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="dcard" href="#contact" data-tilt data-reveal>
+          <span class="dcard__num"><em>02</em></span>
+          <h3>Leadership</h3>
+          <p>The people shaping the firm — and the perspective they bring to every mandate.</p>
+          <span class="link-arrow">Discover <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="dcard" href="#contact" data-tilt data-reveal>
+          <span class="dcard__num"><em>03</em></span>
+          <h3>Connect</h3>
+          <p>Dubai and the wider network — where to find us and how to begin.</p>
+          <span class="link-arrow">Discover <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FINAL CTA ══════════ -->
+  <section class="section finalcta" id="contact">
+    <div class="finalcta__watermark" data-parallax-slow><img src="assets/emblem-3d-gold.png" alt="" /></div>
+    <div class="finalcta__veil"></div>
+    <div class="container finalcta__inner">
+      <p class="eyebrow eyebrow--light" data-reveal><span class="eyebrow__dot"></span> START A CONVERSATION</p>
+      <h2 class="finalcta__title" data-reveal-lines>
+        <span class="line"><span class="line__inner">Have an opportunity</span></span>
+        <span class="line"><span class="line__inner">worth <em>exploring?</em></span></span>
+      </h2>
+      <p class="finalcta__copy" data-reveal>Whether you are evaluating an asset, entering a market, considering an investment or exploring a strategic infrastructure opportunity — let's start with the conversation.</p>
+      <a href="mailto:hello@bizmaker.ae" class="btn btn--gold btn--lg" data-reveal>
+        <span>START A CONVERSATION</span>
+        <svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo-shield-gold.png" alt="BizMaker crest" class="footer__crest" />
+      <span class="footer__word">BIZMAKER</span>
+      <span class="footer__tag">INVESTMENTS &amp; REAL ESTATE</span>
+    </div>
+    <div class="footer__cols">
+      <div class="footer__col">
+        <h5>EXPERTISE</h5>
+        <a href="#expertise">Advisory</a>
+        <a href="#expertise">Capital</a>
+        <a href="#infrastructure">Infrastructure</a>
+        <a href="#discover">Discover BizMaker</a>
+      </div>
+      <div class="footer__col">
+        <h5>SECTORS</h5>
+        <a href="#sectors">Real Estate</a>
+        <a href="#sectors">Specialist Assets</a>
+        <a href="#land">Land &amp; Development</a>
+        <a href="#properties">Properties ↗</a>
+      </div>
+      <div class="footer__col">
+        <h5>COMPANY</h5>
+        <a href="#discover">Our Story</a>
+        <a href="#discover">Leadership</a>
+        <a href="#insights">Insights</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer__base">
+    <span>© 2025 BIZMAKER — INVESTMENTS &amp; REAL ESTATE</span>
+    <span>DUBAI, UNITED ARAB EMIRATES</span>
+    <span class="footer__web">WWW.BIZMAKER.AE</span>
+  </div>
+</footer>
+
+<div class="noise" aria-hidden="true"></div>
+<script src="js/main.js?v=6" defer></script>
+</body>
+</html>
