@@ -58,9 +58,9 @@
     ticking = true;
     requestAnimationFrame(() => {
       const y = window.scrollY;
-      header.classList.toggle("scrolled", y > 40);
+      header?.classList.toggle("scrolled", y > 40);
       const h = document.documentElement.scrollHeight - innerHeight;
-      progress.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
+      if (progress) progress.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
       parallaxFrame(y);
       ticking = false;
     });
@@ -123,6 +123,80 @@
       requestAnimationFrame(loop);
     })();
   }
+
+  /* ─────────── HANDSHAKE — arrival, depth parallax, contact beat ─────────── */
+  (function handshakeHero() {
+    const stage = $("#handshakeScene");
+    const wrap = $("#handshake");
+    if (!stage || !wrap || !heroEl) return;
+
+    // the chrome arm lands last; its arrival is the contact beat
+    const chromeArm = $(".hand--chrome", wrap);
+    const beat = () => wrap.classList.add("is-clasped");
+    if (reduced) {
+      beat();
+    } else if (chromeArm) {
+      chromeArm.addEventListener("animationend", e => {
+        if (e.animationName === "handArriveChrome") beat();
+      }, { once: true });
+      setTimeout(beat, 2800); // safety net if the animation event never lands
+    }
+
+    if (reduced) return;
+
+    const hands = $$(".hand__inner", wrap);
+    const depths = {
+      gold:   { x: 26, y: 20, rx: 4, ry: -5 },
+      chrome: { x: -20, y: -16, rx: -3, ry: 4 }
+    };
+    let mx = 0, my = 0, cx = 0, cy = 0, visible = true, raf = null;
+
+    heroEl.addEventListener("pointermove", e => {
+      const r = heroEl.getBoundingClientRect();
+      mx = (e.clientX - r.left) / r.width - .5;
+      my = (e.clientY - r.top) / r.height - .5;
+    }, { passive: true });
+    heroEl.addEventListener("pointerleave", () => { mx = 0; my = 0; });
+
+    function loop() {
+      cx = lerp(cx, mx, .05); cy = lerp(cy, my, .05);
+      hands.forEach(el => {
+        const d = depths[el.dataset.hand];
+        if (!d) return;
+        el.style.transform =
+          `translate3d(${(cx * d.x).toFixed(2)}px, ${(cy * d.y).toFixed(2)}px, 0)` +
+          ` rotateX(${(cy * d.rx).toFixed(2)}deg) rotateY(${(cx * d.ry).toFixed(2)}deg)`;
+      });
+      raf = requestAnimationFrame(loop);
+    }
+    function start() { if (!raf) raf = requestAnimationFrame(loop); }
+    function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
+
+    start();
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(en => {
+        visible = en[0].isIntersecting;
+        visible ? start() : stop();
+      }, { threshold: 0 }).observe(heroEl);
+    }
+
+    // scroll-out: the monument drifts back into depth as the hero leaves
+    let ticking = false;
+    function heroStageFrame() {
+      if (!visible) return;
+      const r = heroEl.getBoundingClientRect();
+      const p = Math.min(1.2, Math.max(0, -r.top / Math.max(1, r.height)));
+      stage.style.transform =
+        `translate3d(0, ${(p * 92).toFixed(1)}px, 0) rotateX(${(p * 4).toFixed(2)}deg) scale(${(1 - p * .03).toFixed(3)})`;
+      stage.style.opacity = Math.max(0, 1 - p * .9).toFixed(3);
+    }
+    addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { heroStageFrame(); ticking = false; });
+    }, { passive: true });
+    heroStageFrame();
+  })();
 
   /* ─────────── HERO GOLD DUST (cursor-aware) ─────────── */
   (function heroParticles() {
@@ -437,17 +511,20 @@
     io.observe(el);
   });
   // group in-view triggers for diagram animations
-  ["#pillars", "#chain", "#orbit", ".network"].forEach(sel => {
+  ["#pillars", "#chain", "#orbit"].forEach(sel => {
     const el = $(sel);
     if (el) io.observe(el);
   });
 
   /* ─────────── MEGA MENUS ─────────── */
   const items = $$(".has-mega");
-  let openItem = null, closeTimer;
+  let openItem = null, closeTimer, skipFocusOpen = false;
   function closeMega() {
-    openItem?.classList.remove("open");
-    const m = $(".mega.open"); m?.classList.remove("open");
+    if (!openItem) return;
+    const btn = $("button", openItem);
+    btn?.setAttribute("aria-expanded", "false");
+    openItem.classList.remove("open");
+    $(`#mega-${openItem.dataset.menu}`)?.classList.remove("open");
     openItem = null;
   }
   function openMega(item) {
@@ -456,10 +533,12 @@
     closeMega();
     openItem = item;
     item.classList.add("open");
+    $("button", item)?.setAttribute("aria-expanded", "true");
     $(`#mega-${item.dataset.menu}`)?.classList.add("open");
   }
   items.forEach(item => {
     const panel = $(`#mega-${item.dataset.menu}`);
+    const btn = $("button", item);
     item.addEventListener("mouseenter", () => {
       if (innerWidth > 1100) openMega(item);
     });
@@ -468,13 +547,39 @@
     });
     panel?.addEventListener("mouseenter", () => clearTimeout(closeTimer));
     panel?.addEventListener("mouseleave", () => { closeTimer = setTimeout(closeMega, 140); });
-    $("button", item).addEventListener("click", e => {
+    // keyboard: opening on focus makes the menu reachable without hover
+    item.addEventListener("focusin", () => {
+      if (innerWidth > 1100 && !skipFocusOpen) openMega(item);
+    });
+    const leave = e => {
+      if (!item.contains(e.relatedTarget) && !panel?.contains(e.relatedTarget)) {
+        closeTimer = setTimeout(closeMega, 140);
+      }
+    };
+    item.addEventListener("focusout", leave);
+    panel?.addEventListener("focusout", leave);
+    btn?.addEventListener("click", e => {
       e.stopPropagation();
       openItem === item ? closeMega() : openMega(item);
     });
+    btn?.addEventListener("keydown", e => {
+      if (e.key !== "ArrowDown") return;
+      e.preventDefault();
+      openMega(item);
+      panel?.querySelector("a")?.focus();
+    });
+    btn?.setAttribute("aria-expanded", "false");
   });
   document.addEventListener("click", e => {
     if (!e.target.closest(".has-mega, .mega")) closeMega();
+  });
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape" || !openItem) return;
+    const btn = $("button", openItem);
+    skipFocusOpen = true;
+    closeMega();
+    btn?.focus();
+    setTimeout(() => { skipFocusOpen = false; }, 200);
   });
   $$(".mega a").forEach(a => a.addEventListener("click", closeMega));
 
@@ -482,12 +587,24 @@
   const burger = $("#burger");
   const drawer = $("#drawer");
   const setDrawer = on => {
+    if (!drawer) return;
     drawer.classList.toggle("open", on);
     drawer.setAttribute("aria-hidden", String(!on));
-    root.classList.toggle("lux-lock", on);
+    burger?.setAttribute("aria-expanded", String(on));
+    burger?.setAttribute("aria-label", on ? "Close menu" : "Open menu");
+    root.style.overflow = on ? "hidden" : "";
+    if (on) setTimeout(() => $("a", drawer)?.focus(), 120);
   };
-  burger?.addEventListener("click", () => setDrawer(!drawer.classList.contains("open")));
+  burger?.addEventListener("click", () => setDrawer(!drawer?.classList.contains("open")));
   $$(".drawer a").forEach(a => a.addEventListener("click", () => setDrawer(false)));
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape" || !drawer?.classList.contains("open")) return;
+    setDrawer(false);
+    burger?.focus();
+  });
+  addEventListener("resize", () => {
+    if (innerWidth > 1100 && drawer?.classList.contains("open")) setDrawer(false);
+  }, { passive: true });
 
   /* ─────────── OPPORTUNITIES RAIL (drag) ─────────── */
   const rail = $("#rail");
@@ -561,54 +678,8 @@
     }
   }
 
-  /* ─────────── NETWORK DOT FIELD ─────────── */
-  const netDots = $("#netDots");
-  if (netDots) {
-    const NS = "http://www.w3.org/2000/svg";
-    const W = 620, H = 560, gap = 30;
-    const hubs = [[330,300],[170,90],[250,120],[130,190],[400,110],[90,240],[520,70],[560,250],[520,380],[280,370]];
-    let html = "";
-    for (let yy = 14; yy < H; yy += gap) {
-      for (let xx = 14; xx < W; xx += gap) {
-        let near = false;
-        for (const [hx, hy] of hubs) {
-          if (Math.hypot(xx - hx, yy - hy) < 66) { near = true; break; }
-        }
-        const chance = near ? .55 : .13;
-        if (Math.random() < chance) {
-          const r = near ? 1.5 : 1;
-          const o = near ? .4 : .22;
-          const tw = Math.random() < .18 ? ` class="dot-tw"` : "";
-          html += `<circle cx="${xx + (Math.random()*8-4)}" cy="${yy + (Math.random()*8-4)}" r="${r}" opacity="${o}"${tw}/>`;
-        }
-      }
-    }
-    netDots.innerHTML = html;
-  }
-
-  /* ─────────── NETWORK NODE ENTRANCE WRAPPERS
-     CSS transform on the <g> would override its SVG translate attribute and
-     collapse all nodes to (0,0); scale an inner wrapper instead. ─────────── */
-  $$("#netNodes .node").forEach(node => {
-    const NS = "http://www.w3.org/2000/svg";
-    const inner = document.createElementNS(NS, "g");
-    inner.setAttribute("class", "node__in");
-    while (node.firstChild) inner.appendChild(node.firstChild);
-    node.appendChild(inner);
-  });
-
   /* ─────────── SVG DRAW ANIMATIONS (normalised path length) ─────────── */
-  $$("#chainPath, #netArcs path").forEach(p => p.setAttribute("pathLength", "1"));
-
-  /* ─────────── NETWORK TIER ↔ MAP REGION FOCUS ─────────── */
-  const netMap = $("#networkMap");
-  if (netMap) {
-    $$(".network__tiers .tier").forEach(tier => {
-      const cls = `is-region--${tier.dataset.region}`;
-      tier.addEventListener("pointerenter", () => netMap.classList.add(cls));
-      tier.addEventListener("pointerleave", () => netMap.classList.remove(cls));
-    });
-  }
+  $("#chainPath")?.setAttribute("pathLength", "1");
 
   /* ─────────── SMOOTH OFFSET FOR ANCHORS (header height) ─────────── */
   $$('a[href^="#"]').forEach(a => {
