@@ -6,3 +6,8 @@
 /*.jpeg
 /*.jpg
 hero-preview*
+
+# Local environment files — keep real values out of the repo
+.env
+.env.*
+!.env.example
